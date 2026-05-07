@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/* Use class-based dark mode (.dark on <html>) instead of prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* HeatGlow Brand Colors */
+  --color-brand-50: #fff7ed;
+  --color-brand-100: #ffedd5;
+  --color-brand-200: #fed7aa;
+  --color-brand-300: #fdba74;
+  --color-brand-400: #fb923c;
+  --color-brand-500: #f97316;
+  --color-brand-600: #ea6c00;
+  --color-brand-700: #c2570a;
+  --color-brand-800: #9a3412;
+  --color-brand-900: #7c2d12;
+
+  /* Semantic tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: #fafafa;
+
+  /* Badge colours — explicit hex so they are never affected by Tailwind colour resolution */
+  --badge-default-bg: rgba(249,115,22,0.12);
+  --badge-default-fg: #7c2d12;
+  --badge-destructive-bg: #fee2e2;
+  --badge-destructive-fg: #450a0a;
+  --badge-success-bg: #dcfce7;
+  --badge-success-fg: #052e16;
+  --badge-warning-bg: #fde68a;
+  --badge-warning-fg: #451a03;
+  --badge-info-bg: #dbeafe;
+  --badge-info-fg: #082f49;
+  --badge-slate-bg: #f1f5f9;
+  --badge-slate-fg: #0f172a;
+  --badge-purple-bg: #f3e8ff;
+  --badge-purple-fg: #3b0764;
+  --badge-teal-bg: #ccfbf1;
+  --badge-teal-fg: #042f2e;
+  --badge-indigo-bg: #e0e7ff;
+  --badge-indigo-fg: #1e1b4b;
+  --foreground: #18181b;
+  --card: #ffffff;
+  --card-foreground: #18181b;
+  --popover: #ffffff;
+  --popover-foreground: #18181b;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f1;
+  --secondary-foreground: #18181b;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --accent: #fff7ed;
+  --accent-foreground: #9a3412;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #d4d4d8;
+  --input: #e4e4e7;
+  --ring: #f97316;
+  --sidebar: #18181b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-accent: #27272a;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #3f3f46;
+}
+
+.dark {
+  --background: #09090b;
+
+  /* Badge colours — dark mode overrides */
+  --badge-default-bg: rgba(249,115,22,0.22);
+  --badge-default-fg: #fed7aa;
+  --badge-destructive-bg: rgba(127,29,29,0.40);
+  --badge-destructive-fg: #fecaca;
+  --badge-success-bg: rgba(20,83,45,0.40);
+  --badge-success-fg: #bbf7d0;
+  --badge-warning-bg: rgba(120,53,15,0.40);
+  --badge-warning-fg: #fde68a;
+  --badge-info-bg: rgba(30,58,138,0.40);
+  --badge-info-fg: #bfdbfe;
+  --badge-slate-bg: #1e293b;
+  --badge-slate-fg: #cbd5e1;
+  --badge-purple-bg: rgba(88,28,135,0.40);
+  --badge-purple-fg: #e9d5ff;
+  --badge-teal-bg: rgba(19,78,74,0.40);
+  --badge-teal-fg: #99f6e4;
+  --badge-indigo-bg: rgba(49,46,129,0.40);
+  --badge-indigo-fg: #c7d2fe;
+  --foreground: #fafafa;
+  --card: #18181b;
+  --card-foreground: #fafafa;
+  --popover: #18181b;
+  --popover-foreground: #fafafa;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #27272a;
+  --secondary-foreground: #fafafa;
+  --muted: #27272a;
+  --muted-foreground: #a1a1aa;
+  --accent: #431407;
+  --accent-foreground: #fdba74;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #27272a;
+  --input: #27272a;
+  --ring: #f97316;
+  --sidebar: #09090b;
+  --sidebar-foreground: #fafafa;
+  --sidebar-accent: #18181b;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #27272a;
+}
+
+* {
+  border-color: var(--border);
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Form element reset — browser agent stylesheet overrides inheritance for input/textarea.
+   Explicitly bind to CSS vars so dark-mode switching works regardless of Tailwind processing. */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+textarea,
+select {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted-foreground);
+  opacity: 1;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }

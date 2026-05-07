@@ -1,0 +1,11 @@
+{
+  "_note": "Disabled because Vercel Hobby caps cron jobs at 1/day and a small total count. To restore: copy the 'crons' array back into vercel.json (requires Vercel Pro) OR drive these endpoints from an external scheduler (GitHub Actions, Upstash QStash) using POST + Bearer ${CRON_SECRET}.",
+  "crons": [
+    { "path": "/api/cron/sync",            "schedule": "0 * * * *" },
+    { "path": "/api/cron/daily-checks",    "schedule": "0 6 * * *" },
+    { "path": "/api/cron/quote-lapse",     "schedule": "0 7 * * *" },
+    { "path": "/api/cron/invoice-alerts",  "schedule": "0 8 * * 1-5" },
+    { "path": "/api/cron/gdpr-anonymise",  "schedule": "0 2 1 * *" },
+    { "path": "/api/cron/automations",     "schedule": "0 9 * * *" }
+  ]
+}
